@@ -9,8 +9,6 @@
 #include <errno.h>
 #include <process.h>
 
-#include <>
-
 #include "msp_cmn.h"
 #include "msp_errors.h"
 #include "./include/speech_recognizer.h"
@@ -408,7 +406,7 @@ int main(int argc, char* argv[])
 	* result_encoding:	结果编码格式
 	*
 	*/
-	const char* session_begin_params	=	"sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = UTF-8";
+	const char* session_begin_params	=	"sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = UTF-8, vad_eos = 10000";
 
 	/* 用户登录 */
 	ret = MSPLogin(NULL, NULL, login_params); //第一个参数是用户名，第二个参数是密码，均传NULL即可，第三个参数是登录参数	
