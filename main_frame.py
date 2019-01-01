@@ -23,10 +23,12 @@ def user(name):
 
 @app.route('/predict/<txt>')
 def predict(txt):
-    labels = fastText.load_model('model').predict(txt)
+    txt_space = ' '.join(txt)
+    print(txt_space)
+    labels = fastText.load_model('model.ftz').predict(txt_space)
     result, prob = labels
     name = result[0].split('__')[-1]
-    return '<h1> %s </h1>' % name
+    return "<h3><br /></h3><h3><br /></h3><h3><br /></h3><h3><br /></h3><h1 align='center'><span style='font-size:100px;'>	%s </h1>" % name
 
 
 if __name__ == '__main__':
